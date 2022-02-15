@@ -8,7 +8,7 @@ def index():
 @app.route('/about')
 def about():
     return """
-    <h1 style='color: red'>About Page!!!</h1>"
+    <h1 style='color: red'>About Page!!!</h1>
     <p>This is a lovely little paragraph</p>
     <code>Flask is <em>awesome</em></code>
     """

@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- refactor index.html to be our first child template-->
+{% extends "public/templates/public_template.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- Flask has a function called url_for which can be used in our HTML 
-  to provide a path to any static files we want to fetch. -->
-  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
-<!--These double curly braces are part of the Jinja templating engine that Flask uses to render our HTML templates.-->
-  <title>Index</title>
-</head>
+{% block title %}Home{% endblock %}
+<!-- Whatever we put inside the block main is going to be plugged into block section of public template.  -->
+{% block main %}
 
-<body>
-  <h1 style="color: rgb(255, 0, 179)">Index</h1>
-  <p>This is an HTML file served up by Flask</p>
-  <img src="{{ url_for('static', filename='img/background-img.jpg') }}" alt="">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Home</h1>
+    </div>
+  </div>
+</div>
 
-  <script src="{{url_for('static', filename='js/app.js')}}"></script>
-</body>
-
-</html>
+{% endblock %}
